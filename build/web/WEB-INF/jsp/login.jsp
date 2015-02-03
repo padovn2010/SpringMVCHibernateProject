@@ -7,33 +7,39 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Welcome to Spring Web MVC + Hibernate project</title>
     </head>
-
+    
     <body>
         
         <h1> Log in here! </h1>
         
-        <form action="shit-----" method="post">
-
+        <form action="userinfo.htm" method="post">
+            
             <table>
-                <tr>
+                <tr align="left">
+                    <th style="color: red"> ${errorMsg} </th>
+                    <th> <a href="register.htm"> ${register} </a> </th>
+                </tr> 
+            </table>
+            
+            <table>        
+                
+                <tr align="left">
                     <th> Username: </th> 
                     <th> <input type="text" name="username"> </th>
                 </tr>                
-                <tr>
+                <tr align="left">
                     <th> Password: </th> 
                     <th> <input type="text" name="password"> </th>
                 </tr>
                 
                 <tr></tr><tr></tr><tr></tr>
                 
-                <tr>  
-                    <th> <input type="submit" value="Submit"> <th/> 
+                <tr align="left">  
+                    <th> <input type="submit" value="Login"> <th/> 
                 </tr>
                 
-            </table>
-                         
+            </table>                         
         </form>
-
-                       
+        
     </body>
 </html>

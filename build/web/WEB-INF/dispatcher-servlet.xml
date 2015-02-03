@@ -13,8 +13,7 @@
     
     <bean class="controller.AccountController" id="accountController"/>
     <bean class="controller.RegisterController" id="registerController"/>
-    <bean class="controller.LoginController" id="loginController"/>
-    
+    <bean class="controller.UserInfoController" id="userInfoController" />
     
     <!--
     Most controllers will use the ControllerClassNameHandlerMapping above, but
@@ -28,6 +27,7 @@
                 <prop key="register.htm">registerController</prop>
                 <prop key="confirmation.htm">accountController</prop>   
                 <prop key="login.htm">loginController</prop>   
+                <prop key="userinfo.htm">userInfoController</prop>  
               
             </props>
         </property>
@@ -41,8 +41,8 @@
     <!--
     The index controller.
     -->
-    <bean name="indexController"
+    <bean name="loginController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="register" />
-
+          p:viewName="login" />
+    
 </beans>

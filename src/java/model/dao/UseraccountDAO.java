@@ -57,7 +57,33 @@ public class UseraccountDAO {
             return false;
         } else {
             return true;
-        }        
-    }  
+        }
+    }
     
+    @SuppressWarnings("CallToPrintStackTrace")
+    public Useraccount checkLogin(String un, String pw){
+        List<Useraccount> list = null;
+        
+        Session s = HibernateUtil.getSessionFactory().openSession();
+        Transaction tr = s.beginTransaction();
+        
+        try {
+            String hql = "from Useraccount u where u.username='" + un + "' AND u.password ='" + pw + "'";
+            Query q = s.createQuery(hql);
+            list = (List<Useraccount>)q.list();
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+            tr.rollback();
+        } finally{
+            s.close();
+        }
+        
+        if (list.isEmpty()){
+            return null;
+        } else {
+            return list.get(0);
+        }
+        
+    }
 }
